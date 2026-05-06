@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>细胞分选与激活磁珠 - 南京新莱博生物技术有限公司</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .product-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid #2E4057;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .product-card h3 {
+            color: #2E4057;
+            margin-bottom: 1rem;
+        }
+        .product-card a {
+            color: #2E4057;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .product-card a:hover {
+            color: #4A90E2;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 0.3rem 0;
+        }
+        .intro-box {
+            background: #e8f4e8;
+            border-left: 4px solid #4CAF50;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .intro-box h4 {
+            color: #2E4057;
+            margin-bottom: 0.5rem;
+        }
+        .intro-box p {
+            color: #555;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🧬</div>
+                <span>南京新莱博生物技术</span>
+            </a>
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchBox" class="search-box" placeholder="搜索产品货号或名称..." autocomplete="off">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#products">产品中心</a></li>
+                    <li><a href="index.html#about">关于我们</a></li>
+                    <li><a href="index.html#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="index.html#contact" class="contact-btn">立即咨询</a>
+        </div>
+    </header>
+
+    <!-- Product Detail Hero -->
+    <section class="product-detail-hero">
+        <div>
+            <p class="breadcrumb"><a href="index.html">首页</a> / <a href="index.html#products">产品中心</a> / 细胞分选与激活磁珠</p>
+            <h1>🔬 细胞分选与激活磁珠</h1>
+            <p>高效靶细胞分离、纯化及激活解决方案</p>
+        </div>
+    </section>
+
+    <!-- Product Content -->
+    <section class="product-detail-content">
+        <!-- 产品概述 -->
+        <div class="subcategory-section">
+            <h2>细胞分选与激活磁珠整体解决方案</h2>
+            <div class="subcategory-card" style="border-left: none; max-width: 100%;">
+                <p>依托在磁珠合成与抗体开发领域多年的技术积淀，开发了一系列具有优异生物相容性的超顺磁纳米磁珠，为工业及科研客户提供高效的靶细胞分离、纯化及激活解决方案。目前，已形成两大核心产品体系：有柱式分选磁珠和无柱式分选磁珠（配套超强磁铁）。此外，还提供细胞激活磁珠，可高效刺激T细胞的活化与扩增，满足细胞治疗、免疫学研究等应用需求。</p>
+            </div>
+        </div>
+
+        <!-- 产品优势 -->
+        <div class="subcategory-section">
+            <h2>产品优势</h2>
+            <div class="subcategory-grid">
+                <div class="subcategory-card">
+                    <h3>🛡️ 安全性高</h3>
+                    <p>采用天然葡聚糖材质，具有良好的生物可降解性</p>
+                </div>
+                <div class="subcategory-card">
+                    <h3>⚡ 高效便捷</h3>
+                    <p>仅需20分钟，即可获得高纯度、高回收率的目标细胞</p>
+                </div>
+                <div class="subcategory-card">
+                    <h3>✨ 性能优异</h3>
+                    <p>可实现分选纯度≥90%、细胞收率≥85%</p>
+                </div>
+                <div class="subcategory-card">
+                    <h3>🔗 无干扰兼容</h3>
+                    <p>磁珠粒径小且可降解，完美适配各类下游实验</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 技术原理 -->
+        <div class="subcategory-section">
+            <h2>磁性细胞分选技术原理</h2>
+            <div class="subcategory-card" style="border-left: none; max-width: 100%;">
+                <p>磁性细胞分选技术（MACS）基于细胞表面抗原-抗体特异性结合原理，通过超顺磁珠标记靶细胞，实现快速、高纯度分选，是一种高效、温和的细胞分选方案。该技术具有分选速度快、细胞活性高、回收率高等特点，分选后的细胞可广泛应用于细胞培养、流式分析、CAR-T/TCR-T细胞治疗等领域。</p>
+            </div>
+        </div>
+
+        <!-- 产品系列 -->
+        <div class="subcategory-section">
+            <h2>产品系列</h2>
+            
+            <!-- 1. 有柱式分选磁珠 -->
+            <h3 style="margin-top: 2rem;">1. 有柱式分选磁珠</h3>
+            <div class="intro-box">
+                <h4>🏛️ 柱式细胞分选</h4>
+                <p>采用50-100nm的磁珠，表面偶联相应的抗体或蛋白，搭配细胞分选柱，可实现温和分选。分选后无需去除磁珠，不影响流式分析。磁珠采用生物可降解材料，生产过程采用无菌控制，不影响下游培养，完美匹配科研和临床需求。</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>🧬 CD3分选磁珠</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-001</strong> / <strong>XLB-CS-001</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：1×10⁸ / 1×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 CD4分选磁珠</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-002</strong> / <strong>XLB-CS-002</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：1×10⁸ / 1×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 CD8分选磁珠</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-003</strong> / <strong>XLB-CS-003</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：1×10⁸ / 1×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 CD34分选磁珠</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-004</strong> / <strong>XLB-CS-004</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：2×10⁸ / 2×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 CD138分选磁珠</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-005</strong> / <strong>XLB-CS-005</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：2×10⁸ / 2×10⁹</p>
+                </div>
+            </div>
+
+            <!-- 2. 无柱式分选磁珠 -->
+            <h3 style="margin-top: 2.5rem;">2. 无柱式分选磁珠</h3>
+            <div class="intro-box">
+                <h4>🔗 无柱式细胞分选</h4>
+                <p>采用直径为150-200nm的磁珠，表面偶联可以结合生物素化分子的蛋白，搭配生物素化分子，灵活分选各类目标细胞。该磁珠无需使用细胞分选柱，操作更加方便、成本更加可控。</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>🧬 链霉亲和素分选磁珠（50-100nm）</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-006</strong> / <strong>XLB-CS-006</strong> / <strong>XLB-CS-006</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：2×10⁸ / 1×10⁹ / 2×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 链霉亲和素分选磁珠（150-200nm）</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-007</strong> / <strong>XLB-CS-007</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：1×10⁸ / 1×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 Anti-Biotin分选磁珠</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-012</strong> / <strong>XLB-CS-012</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：1×10⁸ / 1×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 CD14分选磁珠（抗人）</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-013</strong> / <strong>XLB-CS-013</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：1×10⁸ / 1×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 NK细胞阴选试剂盒（VDS）</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-008</strong> / <strong>XLB-CS-008</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：1×10⁸ / 1×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 T细胞阴选试剂盒（VDS）</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-009</strong> / <strong>XLB-CS-009</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：1×10⁸ / 1×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 单核细胞阴选试剂盒（VDS）</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-010</strong> / <strong>XLB-CS-010</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：1×10⁸ / 1×10⁹</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 CD138分选试剂盒（VDS）</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-011</strong> / <strong>XLB-CS-011</strong> / <strong>XLB-CS-011</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">含磁珠+抗体Cocktail+去除试剂</p>
+                </div>
+                <div class="product-card">
+                    <h3>🧬 中性粒细胞阴选试剂盒（VDS）</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-016</strong> / <strong>XLB-CS-016</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理细胞数：1×10⁸ / 1×10⁹</p>
+                </div>
+            </div>
+
+            <!-- 3. 细胞激活磁珠 -->
+            <h3 style="margin-top: 2.5rem;">3. 细胞激活磁珠</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>⚡ 人CD3/CD28激活磁珠</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-014</strong> / <strong>XLB-CS-014</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理T细胞数：8×10⁶ / 8×10⁷</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem;">4.5μm，9天150倍扩增</p>
+                </div>
+                <div class="product-card">
+                    <h3>⚡ 小鼠CD3/CD28激活磁珠</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-CS-015</strong> / <strong>XLB-CS-015</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理T细胞数：8×10⁶ / 8×10⁷</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem;">4.5μm，T细胞激活扩增</p>
+                </div>
+            </div>
+
+            <!-- 4. 磁力架 -->
+            <h3 style="margin-top: 2.5rem;">4. 磁力架</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>🧲 5mL单孔超强磁极</h3>
+                    <p style="color: #666; font-size: 0.9rem;">货号：<strong>XLB-EQ-011</strong></p>
+                    <p style="color: #666; font-size: 0.9rem;">处理样本量：5mL</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.85rem;">专为无柱式细胞分选设计</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 联系我们 -->
+        <div class="subcategory-section" style="margin-top: 3rem;">
+            <h2>联系我们</h2>
+            <div class="subcategory-card" style="border-left: none;">
+                <p><strong>南京新莱博生物技术有限公司</strong></p>
+                <p style="margin-top: 0.5rem;">联系人：陈经理</p>
+                <p>电话：189-1260-8678</p>
+                <p style="margin-top: 1rem;">如需产品技术资料、报价或样品申请，欢迎联系我们！</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>南京新莱博生物技术有限公司</h4>
+                <p>专业生命科学产品代理商</p>
+            </div>
+            <div class="footer-section">
+                <h4>产品分类</h4>
+                <a href="product-pei.html">PEI转染试剂</a>
+                <a href="product-magnetic-beads.html">琼脂糖磁性微球</a>
+                
+                
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <p>联系人：陈经理</p>
+                <p>电话：189-1260-8678</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 南京新莱博生物技术有限公司 版权所有</p>
+        </div>
+    </footer>
+    <script src="js/search.js"></script>
+</body>
+</html>

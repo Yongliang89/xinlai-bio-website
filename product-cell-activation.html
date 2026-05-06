@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>细胞激活磁珠 - T细胞激活 - 南京新莱博生物技术有限公司</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .comparison-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .comparison-image {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .comparison-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .comparison-image h4 {
+            margin: 1rem 0 0.5rem;
+            color: #2E4057;
+            font-size: 1rem;
+        }
+        .comparison-image p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #ddd;
+            padding: 0.6rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .data-table th {
+            background: #2E4057;
+            color: white;
+        }
+        .data-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .highlight-box h4 {
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        .highlight-box.green {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🧬</div>
+                <span>南京新莱博生物技术</span>
+            </a>
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchBox" class="search-box" placeholder="搜索产品货号或名称..." autocomplete="off">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#products">产品中心</a></li>
+                    <li><a href="index.html#about">关于我们</a></li>
+                    <li><a href="index.html#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="index.html#contact" class="contact-btn">立即咨询</a>
+        </div>
+    </header>
+
+    <!-- Product Detail Hero -->
+    <section class="product-detail-hero">
+        <div>
+            <p class="breadcrumb"><a href="index.html">首页</a> / <a href="product-cell-selection.html">细胞分选与激活磁珠</a> / 细胞激活磁珠</p>
+            <h1>⚡ 细胞激活磁珠</h1>
+            <p>T细胞激活与扩增解决方案</p>
+        </div>
+    </section>
+
+    <!-- Product Content -->
+    <section class="product-detail-content">
+        <!-- 产品概述 -->
+        <div class="subcategory-section">
+            <h2>产品概述</h2>
+            <div class="subcategory-card" style="border-left: none; max-width: 100%;">
+                <p>可提供4.5μm的CD3与CD28激活磁珠，磁珠表面的CD3和CD28抗体通过模拟抗原提呈细胞（APC）的信号，强烈诱导T细胞活化、增殖实行免疫功能。</p>
+            </div>
+        </div>
+
+        <!-- 核心优势 -->
+        <div class="subcategory-section">
+            <h2>产品优势</h2>
+            <div class="highlight-box green">
+                <h4>⚡ 高效扩增</h4>
+                <p>单次9天刺激实现150倍细胞增殖，满足高产量需求</p>
+            </div>
+            <div class="subcategory-grid">
+                <div class="subcategory-card">
+                    <h3>📏 粒径均一</h3>
+                    <p>磁珠大小高度一致（CV&lt;5%），流式分群清晰，结果稳定</p>
+                </div>
+                <div class="subcategory-card">
+                    <h3>🛡️ 保护细胞活性</h3>
+                    <p>温和激活，避免过度刺激，确保细胞高活性和功能性</p>
+                </div>
+                <div class="subcategory-card">
+                    <h3>🔧 操作简单</h3>
+                    <p>磁珠易分离，兼容自动化，减少人工误差，提高重复性</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 激活原理图 -->
+        <div class="subcategory-section">
+            <h2>激活原理</h2>
+            <div class="comparison-images">
+                <div class="comparison-image">
+                    <h4>T细胞激活过程</h4>
+                    <img src="images/cell-selection-page7-img1.png" alt="T细胞激活">
+                    <p>磁珠模拟APC信号诱导T细胞活化与增殖</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 性能验证 -->
+        <div class="subcategory-section">
+            <h2>T细胞激活性能验证</h2>
+            <div class="subcategory-card" style="border-left: none; max-width: 100%;">
+                <p>使用CD3、CD28激活磁珠共刺激T细胞后，T细胞可进行有效扩增。分别在3、6、9天后对T细胞进行计数，结果显示T细胞数量与竞品无明显差异。</p>
+            </div>
+
+            <h3 style="margin-top: 1.5rem;">细胞扩增曲线</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>时间点</th>
+                        <th>竞品M</th>
+                        <th>本产品</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Day 0</td><td>1×</td><td>1×</td></tr>
+                    <tr><td>Day 3</td><td>~3×</td><td>~3×</td></tr>
+                    <tr><td>Day 6</td><td>~30×</td><td>~30×</td></tr>
+                    <tr><td>Day 9</td><td>~150×</td><td>~150×</td></tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 1rem; color: #666;">单次9天刺激实现150倍细胞增殖，与竞品无明显差异</p>
+        </div>
+
+        <!-- 产品信息 -->
+        <div class="subcategory-section">
+            <h2>产品信息</h2>
+            <table class="specs-table">
+                <thead>
+                    <tr>
+                        <th>产品名称</th>
+                        <th>货号</th>
+                        <th>处理T细胞数</th>
+                        <th>包装规格</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td rowspan="2">人CD3/CD28激活磁珠</td><td><strong>XLB-CS-014</strong>-1</td><td>8×10⁶ T Cells</td><td>200µL</td></tr>
+                    <tr><td><strong>XLB-CS-014</strong>-2</td><td>8×10⁷ T Cells</td><td>2mL</td></tr>
+                    <tr><td rowspan="2">小鼠CD3/CD28激活磁珠</td><td><strong>XLB-CS-015</strong>-1</td><td>8×10⁶ T Cells</td><td>200µL</td></tr>
+                    <tr><td><strong>XLB-CS-015</strong>-2</td><td>8×10⁷ T Cells</td><td>2mL</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 联系我们 -->
+        <div class="subcategory-section" style="margin-top: 3rem;">
+            <h2>联系我们</h2>
+            <div class="subcategory-card" style="border-left: none;">
+                <p><strong>南京新莱博生物技术有限公司</strong></p>
+                <p style="margin-top: 0.5rem;">联系人：陈经理</p>
+                <p>电话：189-1260-8678</p>
+                <p style="margin-top: 1rem;">如需产品技术资料、报价或样品申请，欢迎联系我们！</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>南京新莱博生物技术有限公司</h4>
+                <p>专业生命科学产品代理商</p>
+            </div>
+            <div class="footer-section">
+                <h4>产品分类</h4>
+                <a href="product-pei.html">PEI转染试剂</a>
+                <a href="product-magnetic-beads.html">琼脂糖磁性微球</a>
+                <a href="product-cell-selection.html">细胞分选磁珠</a>
+                </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <p>联系人：陈经理</p>
+                <p>电话：189-1260-8678</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 南京新莱博生物技术有限公司 版权所有</p>
+        </div>
+    </footer>
+    <script src="js/search.js"></script>
+</body>
+</html>

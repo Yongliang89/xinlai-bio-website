@@ -1,0 +1,157 @@
+产品货号对照表 - 南京新莱博生物技术有限公司
+=========================================
+
+一、PEI转染试剂
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+1,PEI HEX转染试剂,1g,TFPEI40KA,XLB-PEI-001
+2,PEI HEX转染试剂,10g,TFPEI40KA-10G,XLB-PEI-002
+
+二、琼脂糖磁性微球
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+3,Protein A琼脂糖磁性微球,1mL/25mL/100mL,PMA1025AA,XLB-MB-001
+4,Protein G琼脂糖磁性微球,1mL/25mL/100mL,PMA1025GA,XLB-MB-002
+5,Ni-NTA琼脂糖磁性微球,1mL/25mL/100mL,PMA1025NA,XLB-MB-003
+6,Ni-TED琼脂糖磁性微球,1mL/25mL/100mL,PMA1025TA,XLB-MB-004
+7,50mL磁力架（4孔）,1个,V00020,XLB-EQ-001
+8,15mL磁力架（12孔）,1个,V00031,XLB-EQ-002
+
+三、层析填料 - 凝胶过滤
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+9,Focurose 4FF,25mL/100mL/500mL/1L/5L/20L,HN030303025M等,XLB-CHR-001
+10,Focurose 6FF,25mL/100mL/500mL/1L/5L/20L,HN060307025M等,XLB-CHR-002
+11,Focurose 4B,25mL/100mL/500mL/1L/5L/20L,HN030301025M等,XLB-CHR-003
+12,Focurose 200PG,25mL/100mL/500mL/1L/5L/20L,HN120210025M等,XLB-CHR-004
+13,Focurose 75PG,25mL/100mL/500mL/1L/5L/20L,HN120209025M等,XLB-CHR-005
+14,Focurose G25+,25mL/100mL/500mL/1L/5L/20L,HN120350025M等,XLB-CHR-006
+
+三、层析填料 - 离子交换（VDX系列）
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+15,VDX HQ 强阴离子交换填料,25mL/100mL/500mL/1L/5L/20L,HL270818025M等,XLB-CHR-007
+16,VDX HS 强阳离子交换填料,25mL/100mL/500mL/1L/5L/20L,HL270820025M等,XLB-CHR-008
+17,VDX XQ 高载量阴离子交换填料,25mL/100mL/500mL/1L/5L/20L,HL270819025M等,XLB-CHR-009
+18,VDX XS 高载量阳离子交换填料,25mL/100mL/500mL/1L/5L/20L,HL270821025M等,XLB-CHR-010
+19,VDX CM 弱阳离子交换填料,25mL/100mL/500mL/1L/5L/20L,HL190830025M等,XLB-CHR-011
+20,VDX RS 强阳离子交换填料,25mL/100mL/500mL/1L/5L/20L,HL190831025M等,XLB-CHR-012
+
+三、层析填料 - 离子交换（Focurose系列）
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+21,SP Focurose FF 强阳离子交换填料,25mL/100mL/500mL/1L/5L/20L,HL060301025M等,XLB-CHR-013
+22,CM Focurose FF 弱阳离子交换填料,25mL/100mL/500mL/1L/5L/20L,HL060303025M等,XLB-CHR-014
+23,Q Focurose FF 强阴离子交换填料,25mL/100mL/500mL/1L/5L/20L,HL060306025M等,XLB-CHR-015
+24,DEAE Focurose FF 弱阴离子交换填料,25mL/100mL/500mL/1L/5L/20L,HL060307025M等,XLB-CHR-016
+25,DEAE Focurose HP 高分辨率填料,25mL/100mL/500mL/1L/5L/20L,HL060207025M等,XLB-CHR-017
+26,DEAE Focurose XL 超高载量填料,25mL/100mL/500mL/1L/5L/20L,HL120307025M等,XLB-CHR-018
+27,SP Focurose HPR 高刚性填料,25mL/100mL/500mL/1L/5L/20L,HL190801025M等,XLB-CHR-019
+28,Q Focurose HPR 高刚性填料,25mL/100mL/500mL/1L/5L/20L,HL190206025M等,XLB-CHR-020
+
+三、层析填料 - 亲和层析
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+29,arProtein A Focurose HR 抗体亲和填料,25mL/100mL/500mL/1L/5L/20L,HQ320827025M等,XLB-CHR-021
+30,Protein G Focurose 4FF 抗体亲和填料,25mL/100mL/500mL/1L/5L/20L,HQ030316025M等,XLB-CHR-022
+31,VDX VH3 抗体片段亲和填料,25mL/100mL/500mL/1L/5L/20L,HQ320863025M等,XLB-CHR-023
+32,VDX NTA Ni ultra His标签蛋白亲和填料,25mL/100mL/500mL/1L/5L/20L,HQ320862025M等,XLB-CHR-024
+33,Ni Focurose FF (IDA) His标签蛋白亲和填料,25mL/100mL/500mL/1L/5L/20L,HQ060311025M等,XLB-CHR-025
+34,Ni Focurose FF (IMAC) His标签蛋白亲和填料,25mL/100mL/500mL/1L/5L/20L,HQ060312025M等,XLB-CHR-026
+35,Ni Focurose FF (TED) His标签蛋白亲和填料,25mL/100mL/500mL/1L/5L/20L,HQ060313025M等,XLB-CHR-027
+36,GST Focurose 4FF GST标签蛋白亲和填料,25mL/100mL/500mL/1L/5L/20L,HQ030307025M等,XLB-CHR-028
+37,Benzamidine Focurose 4FF(HS) 丝氨酸蛋白酶纯化填料,25mL/100mL/500mL/1L/5L/20L,HQ030317025M等,XLB-CHR-029
+38,CNBr Focurose 4FF 预活化介质,5mL/25mL/100mL,HQ030301005M等,XLB-CHR-030
+
+三、层析填料 - 疏水层析
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+39,Phenyl Focurose FF (HS) 疏水填料,25mL/100mL/500mL/1L/5L/20L,HS060302025M等,XLB-CHR-031
+40,Phenyl Focurose HP 高分辨率疏水填料,25mL/100mL/500mL/1L/5L/20L,HS060202025M等,XLB-CHR-032
+
+三、层析填料 - 复合模式层析
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+41,VDX MMA ultra 耐高盐复合模式填料,25mL/100mL/500mL/1L/5L/20L,HF190826025M等,XLB-CHR-033
+42,VDX Core A 病毒/病毒样颗粒纯化填料,25mL/100mL/500mL/1L/5L/20L,HF270325025M等,XLB-CHR-034
+
+三、层析空柱
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+43,HT01 介质筛选空柱,1mL,HT01,XLB-EQ-003
+44,HT05 介质筛选空柱,5mL,HT05,XLB-EQ-004
+45,HT12 介质筛选空柱,12mL,HT12,XLB-EQ-005
+46,HT30 介质筛选空柱,30mL,HT30,XLB-EQ-006
+47,HT60 介质筛选空柱,60mL,HT60,XLB-EQ-007
+48,HK 16/20 工艺开发层析空柱,16mm×20mm,HK16-20,XLB-EQ-008
+49,HK 26/20 工艺开发层析空柱,26mm×20mm,HK26-20,XLB-EQ-009
+50,HK 50/30 工艺开发层析空柱,50mm×30mm,HK50-30,XLB-EQ-010
+
+四、预装柱
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+51,Protein A 预装柱 (1mL/5mL),1mL/5mL预填充,预装柱规格,XLB-PC-001
+52,GST 预装柱 (1mL/5mL),1mL/5mL预填充,预装柱规格,XLB-PC-002
+53,Ni IDA 预装柱 (1mL/5mL),1mL/5mL预填充,预装柱规格,XLB-PC-003
+54,Ni IMAC 预装柱 (1mL/5mL),1mL/5mL预填充,预装柱规格,XLB-PC-004
+55,Ni TED 预装柱 (1mL/5mL),1mL/5mL预填充,预装柱规格,XLB-PC-005
+
+五、TFF膜包
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+56,超滤膜包 1kDa,0.1-5L,TFF-UF-1K,XLB-TFF-001
+57,超滤膜包 3kDa,0.1-5L,TFF-UF-3K,XLB-TFF-002
+58,超滤膜包 5kDa,0.1-5L,TFF-UF-5K,XLB-TFF-003
+59,超滤膜包 10kDa,0.1-5L,TFF-UF-10K,XLB-TFF-004
+60,超滤膜包 30kDa,0.1-5L,TFF-UF-30K,XLB-TFF-005
+61,超滤膜包 50kDa,0.1-5L,TFF-UF-50K,XLB-TFF-006
+62,超滤膜包 100kDa,0.1-5L,TFF-UF-100K,XLB-TFF-007
+63,超滤膜包 300kDa,0.1-5L,TFF-UF-300K,XLB-TFF-008
+64,微滤膜包 0.1μm,0.1-5L,TFF-MF-01,XLB-TFF-009
+65,微滤膜包 0.22μm,0.1-5L,TFF-MF-022,XLB-TFF-010
+66,微滤膜包 0.45μm,0.1-5L,TFF-MF-045,XLB-TFF-011
+67,病毒清除膜包 20nm,0.1-5L,TFF-VF-20N,XLB-TFF-012
+68,病毒清除膜包 35nm,0.1-5L,TFF-VF-35N,XLB-TFF-013
+
+六、均相发光试剂
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+69,增强型化学发光底物 (ECL),100mL/500mL,LUM-ECL-001,XLB-LUM-001
+70,稳定性化学发光底物,100mL/500mL,LUM-STEADY-001,XLB-LUM-002
+71,荧光素酶检测试剂盒,100T/500T/1000T,LUM-LUC-001,XLB-LUM-003
+72,AlphaLISA 试剂,100T/500T/1000T,LUM-ALPHA-001,XLB-LUM-004
+73,TR-FRET 试剂盒,100T/500T/1000T,LUM-TRFRET-001,XLB-LUM-005
+74,HTRF 检测试剂,100T/500T/1000T,LUM-HTRF-001,XLB-LUM-006
+75,ATP发光检测试剂盒,100T/500T/1000T,LUM-ATP-001,XLB-LUM-007
+76,ADP-Glo 激酶检测试剂盒,100T/500T/1000T,LUM-ADP-001,XLB-LUM-008
+
+七、细胞分选磁珠 - 有柱式
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+77,CD3分选磁珠（抗人）,2mL/10mL,CS1001,XLB-CS-001
+78,CD4分选磁珠（抗人）,2mL/10mL,CS1002,XLB-CS-002
+79,CD8分选磁珠（抗人）,2mL/10mL,CS1003,XLB-CS-003
+80,CD34分选磁珠（抗人）,2mL/10mL,CS1004,XLB-CS-004
+81,CD138分选磁珠（抗人）,2mL/10mL,CS1005,XLB-CS-005
+
+七、细胞分选磁珠 - 无柱式
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+82,链霉亲和素分选磁珠（50-100nm）,2mL/10mL,CS1006,XLB-CS-006
+83,链霉亲和素分选磁珠（150-200nm）,2mL/10mL,CS1009,XLB-CS-007
+84,NK细胞阴选试剂盒（抗人）,Kit,CS1010,XLB-CS-008
+85,T细胞阴选试剂盒（抗人）,Kit,CS1011,XLB-CS-009
+86,单核细胞阴选试剂盒（抗人）,Kit,CS1012,XLB-CS-010
+87,CD138分选试剂盒（抗人）,Kit,CS1013,XLB-CS-011
+88,Anti-Biotin分选磁珠,2mL/10mL,CS1014,XLB-CS-012
+89,CD14分选磁珠（抗人）,2mL/10mL,CS1016,XLB-CS-013
+
+七、细胞激活磁珠
+序号,产品名称,规格,原始货号,新莱博货号(XLB)
+90,人CD3/CD28激活磁珠,1mL/5mL/10mL,CS1007,XLB-CS-014
+91,小鼠CD3/CD28激活磁珠,1mL/5mL/10mL,CS1008,XLB-CS-015
+92,5mL单孔超强磁极,1个,CS2001-1,XLB-EQ-011
+
+=========================================
+货号命名规则说明：
+=========================================
+XLB = XinLaibo（新莱博）
+- PEI = 聚乙烯亚胺转染试剂系列
+- MB = 磁性微球系列
+- CHR = 层析填料系列
+- TFF = 超滤/微滤膜包系列
+- LUM = 均相发光试剂系列
+- CS = 细胞分选/激活磁珠系列
+- EQ = 纯化设备/空柱系列
+- PC = 预装柱系列
+
+=========================================
+生成日期：2026-04-24
+生成单位：南京新莱博生物技术有限公司
+=========================================
