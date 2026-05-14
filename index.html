@@ -6,6 +6,66 @@
     <title>南京新莱博生物技术有限公司 - 生物试剂与耗材</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* 两大分类区样式 */
+        .category-block { padding: 4rem 2rem; }
+        .category-block.reagents { background: #f0f7ff; }
+        .category-block.consumables { background: #fff5f0; }
+        .category-block-inner { max-width: 1200px; margin: 0 auto; }
+        .category-block-header {
+            display: flex; align-items: center; gap: 16px;
+            margin-bottom: 2rem;
+        }
+        .category-block-icon {
+            width: 56px; height: 56px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; flex-shrink: 0;
+        }
+        .reagents .category-block-icon { background: linear-gradient(135deg, #1a5f7a, #228fb0); }
+        .consumables .category-block-icon { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .category-block-header h2 { font-size: 1.8rem; color: #1a2b3c; margin: 0; }
+        .category-block-header p { color: #888; font-size: 0.95rem; margin: 4px 0 0; }
+        .category-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .cat-card {
+            background: #fff; border-radius: 16px; padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
+            text-decoration: none; color: inherit; display: block;
+        }
+        .cat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        .cat-card h3 { font-size: 1.25rem; color: #1a5f7a; margin-bottom: 6px; }
+        .cat-card .sub { color: #57c5b6; font-size: 0.85rem; font-weight: 500; margin-bottom: 12px; }
+        .cat-card p { color: #666; line-height: 1.7; font-size: 0.92rem; }
+        .cat-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+        .cat-card .tags span {
+            padding: 3px 10px; border-radius: 12px; font-size: 0.8rem;
+            background: #f0f7ff; color: #1a5f7a;
+        }
+        .consumables .cat-card .tags span { background: #fff0ec; color: #c0392b; }
+        .cat-card .arrow { color: #1a5f7a; font-weight: 600; margin-top: 12px; display: inline-block; font-size: 0.9rem; }
+        .consumables .cat-card .arrow { color: #c0392b; }
+        .cat-card:hover .arrow { transform: translateX(4px); }
+        /* 大入口卡片 */
+        .big-entry {
+            grid-column: 1 / -1; display: flex; align-items: center; gap: 2rem;
+            padding: 2.5rem; background: #fff;
+        }
+        .big-entry .entry-icon {
+            width: 100px; height: 100px; border-radius: 20px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3rem;
+        }
+        .consumables .big-entry .entry-icon { background: linear-gradient(135deg, #e74c3c, #ff6b6b); }
+        .big-entry h3 { font-size: 1.5rem; color: #1a2b3c; margin-bottom: 8px; }
+        .big-entry p { color: #666; line-height: 1.7; }
+        .big-entry .arrow { font-size: 1rem; }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -45,59 +105,87 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <div class="section-title">
-            <h2>核心产品</h2>
-            <p>自主研发与生产高品质生物试剂，覆盖转染试剂、蛋白纯化磁珠、细胞分选等多个领域</p>
+    <!-- Products Section - 两大类 -->
+    <section id="products">
+
+        <!-- ===== 生物试剂 ===== -->
+        <div class="category-block reagents">
+            <div class="category-block-inner">
+                <div class="category-block-header">
+                    <div class="category-block-icon">🧪</div>
+                    <div>
+                        <h2>生物试剂</h2>
+                        <p>自主研发与生产高品质生物试剂，覆盖转染试剂、蛋白纯化磁珠、细胞分选等领域</p>
+                    </div>
+                </div>
+                <div class="category-grid">
+                    <a href="product-pei.html" class="cat-card">
+                        <h3>PEI转染试剂</h3>
+                        <div class="sub">基因转染</div>
+                        <p>聚乙烯亚胺转染试剂，专为哺乳动物细胞高效转染设计，适用于蛋白表达、病毒包装等应用场景。</p>
+                        <div class="tags">
+                            <span>高效转染</span>
+                            <span>低细胞毒性</span>
+                            <span>蛋白表达</span>
+                        </div>
+                        <span class="arrow">查看详情 →</span>
+                    </a>
+
+                    <a href="product-magnetic-beads.html" class="cat-card">
+                        <h3>琼脂糖磁性微球</h3>
+                        <div class="sub">蛋白纯化</div>
+                        <p>蛋白纯化解决方案，包含Protein A/G、NTA、NI-TED等多种配基磁珠，适用于抗体纯化、His标签蛋白纯化等。</p>
+                        <div class="tags">
+                            <span>Protein A/G</span>
+                            <span>NTA磁珠</span>
+                            <span>抗体纯化</span>
+                        </div>
+                        <span class="arrow">查看详情 →</span>
+                    </a>
+
+                    <a href="product-cell-selection.html" class="cat-card">
+                        <h3>细胞分选与激活磁珠</h3>
+                        <div class="sub">细胞治疗</div>
+                        <p>细胞分选与激活磁珠，用于免疫细胞的分离、纯化和体外激活扩增，广泛应用于细胞治疗研发。</p>
+                        <div class="tags">
+                            <span>T细胞分选</span>
+                            <span>细胞激活</span>
+                            <span>细胞治疗</span>
+                        </div>
+                        <span class="arrow">查看详情 →</span>
+                    </a>
+                </div>
+            </div>
         </div>
-        
-        <div class="products-grid">
-            <a href="product-pei.html" class="product-card">
-                <div class="product-icon">🧪</div>
-                <div class="product-content">
-                    <h3>PEI转染试剂</h3>
-                    <div class="category">基因转染</div>
-                    <p>聚乙烯亚胺转染试剂，专为哺乳动物细胞高效转染设计，适用于蛋白表达、病毒包装等应用场景。</p>
-                    <div class="product-tags">
-                        <span class="tag">高效转染</span>
-                        <span class="tag">低细胞毒性</span>
-                        <span class="tag">蛋白表达</span>
+
+        <!-- ===== 生物耗材 ===== -->
+        <div class="category-block consumables">
+            <div class="category-block-inner">
+                <div class="category-block-header">
+                    <div class="category-block-icon">🔬</div>
+                    <div>
+                        <h2>生物耗材</h2>
+                        <p>高品质实验室耗材全系列，涵盖移液吸头、细胞培养板、培养瓶、离心管等53款产品</p>
                     </div>
-                    <span class="product-link">查看详情</span>
                 </div>
-            </a>
-            
-            <a href="product-magnetic-beads.html" class="product-card">
-                <div class="product-icon">🧲</div>
-                <div class="product-content">
-                    <h3>琼脂糖磁性微球</h3>
-                    <div class="category">蛋白纯化</div>
-                    <p>蛋白纯化解决方案，包含Protein A/G、NTA、NI-TED等多种配基磁珠，适用于抗体纯化、His标签蛋白纯化等。</p>
-                    <div class="product-tags">
-                        <span class="tag">Protein A/G</span>
-                        <span class="tag">NTA磁珠</span>
-                        <span class="tag">抗体纯化</span>
-                    </div>
-                    <span class="product-link">查看详情</span>
+                <div class="category-grid">
+                    <a href="product-consumables.html" class="cat-card big-entry">
+                        <div class="entry-icon">🔬</div>
+                        <div>
+                            <h3>实验室耗材全系列</h3>
+                            <p>移液吸头、细胞培养板、培养瓶、离心管……覆盖科研与生产全场景需求，一站式供应。</p>
+                            <div class="tags">
+                                <span>移液吸头</span>
+                                <span>培养板/培养瓶</span>
+                                <span>离心管</span>
+                            </div>
+                            <span class="arrow">查看全部耗材 →</span>
+                        </div>
+                    </a>
                 </div>
-            </a>
-            
-            <a href="product-cell-selection.html" class="product-card">
-                <div class="product-icon">🧬</div>
-                <div class="product-content">
-                    <h3>细胞分选与激活磁珠</h3>
-                    <div class="category">细胞治疗</div>
-                    <p>细胞分选与激活磁珠，用于免疫细胞的分离、纯化和体外激活扩增，广泛应用于细胞治疗研发。</p>
-                    <div class="product-tags">
-                        <span class="tag">T细胞分选</span>
-                        <span class="tag">细胞激活</span>
-                        <span class="tag">细胞治疗</span>
-                    </div>
-                    <span class="product-link">查看详情</span>
-                </div>
-            </a>
+            </div>
         </div>
+
     </section>
 
     <!-- About Section -->
@@ -106,7 +194,7 @@
             <div class="about-content">
                 <h2>关于我们</h2>
                 <p>南京新莱博生物技术有限公司成立于2021年，是一家专注于生命科学领域的生物试剂与耗材供应商。公司位于南京市六合区，致力于为生物医药企业、科研院所提供优质的试剂耗材和技术服务。</p>
-                <p>公司核心产品涵盖基因转染、蛋白纯化磁珠、细胞分选与激活等多个领域，以"创新、品质、服务"为经营理念，为客户提供从产品研发到生产应用的全程支持。</p>
+                <p>公司产品涵盖生物试剂与生物耗材两大板块：试剂类包括基因转染、蛋白纯化磁珠、细胞分选与激活等；耗材类包括移液吸头、细胞培养板、培养瓶、离心管等全系列实验室用品。以"创新、品质、服务"为经营理念，为客户提供从产品研发到生产应用的全程支持。</p>
                 <div class="about-stats">
                     <div class="stat">
                         <div class="stat-number">4+</div>
@@ -117,8 +205,8 @@
                         <div class="stat-label">合作客户</div>
                     </div>
                     <div class="stat">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">核心产品线</div>
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">大产品板块</div>
                     </div>
                 </div>
             </div>
@@ -147,7 +235,7 @@
             <div class="contact-card">
                 <div class="icon">📍</div>
                 <h3>公司地址</h3>
-                <p>南京市六合区龙池街道</p>
+                <p>南京市六合区龙池街道虎跃东路8号</p>
             </div>
         </div>
     </section>
@@ -162,9 +250,12 @@
             </div>
             <div class="footer-section">
                 <h4>产品分类</h4>
+                <p style="color:#57c5b6;font-weight:600;margin-bottom:4px;">生物试剂</p>
                 <a href="product-pei.html">PEI转染试剂</a>
                 <a href="product-magnetic-beads.html">琼脂糖磁性微球</a>
                 <a href="product-cell-selection.html">细胞分选磁珠</a>
+                <p style="color:#e74c3c;font-weight:600;margin:8px 0 4px;">生物耗材</p>
+                <a href="product-consumables.html">实验室耗材全系列</a>
             </div>
             <div class="footer-section">
                 <h4>联系方式</h4>
@@ -180,21 +271,13 @@
 
     <script src="js/search.js"></script>
     <script>
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
-
-        // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {

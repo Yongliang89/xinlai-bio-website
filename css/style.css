@@ -401,6 +401,34 @@ nav a:hover {
     content: ' →';
 }
 
+/* 耗材产品卡片高亮 */
+.product-card.featured {
+    border: 2px solid var(--secondary);
+    position: relative;
+    overflow: visible;
+}
+
+.product-card.featured .product-icon {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.product-card.featured:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 70px rgba(231,76,60,0.25);
+}
+
+.tag.hot {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    font-weight: 600;
+    animation: pulse-tag 2s ease-in-out infinite;
+}
+
+@keyframes pulse-tag {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
 /* About Section */
 .about {
     padding: 5rem 2rem;

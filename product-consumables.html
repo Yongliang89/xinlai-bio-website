@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生物耗材 - 南京新莱博生物技术有限公司</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ========== 耗材页面专用样式 ========== */
+        .consumables-hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 40%, #0d4a6e 100%);
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .consumables-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(64,169,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .consumables-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(64,169,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .consumables-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .consumables-hero .subtitle {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 300;
+            max-width: 600px;
+        }
+        .consumables-hero .breadcrumb {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        .consumables-hero .breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+        .consumables-hero .breadcrumb a:hover { color: #40a9ff; }
+
+        /* 分类导航 */
+        .cat-nav {
+            background: #fff;
+            border-bottom: 1px solid #e8ecf1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .cat-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+            padding: 0 20px;
+        }
+        .cat-tab {
+            padding: 16px 28px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #555;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cat-tab:hover { color: #1a5f7a; background: #f7fafc; }
+        .cat-tab.active {
+            color: #1a5f7a;
+            border-bottom-color: #1a5f7a;
+            background: #f0f7ff;
+        }
+        .cat-tab .count {
+            background: #e8eff5;
+            color: #1a5f7a;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        /* 分类区域 */
+        .category-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            display: none;
+        }
+        .category-section.active { display: block; }
+
+        .category-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #eef3f7;
+        }
+        .category-header .cat-image {
+            width: 280px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+        .category-header .cat-info h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a2b3c;
+            margin-bottom: 10px;
+        }
+        .category-header .cat-info p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 0.93rem;
+        }
+
+        /* 规格筛选栏 */
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .filter-label {
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 500;
+        }
+        .filter-chip {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.83rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #dde4ea;
+            background: #fff;
+            color: #555;
+            font-weight: 400;
+        }
+        .filter-chip:hover { border-color: #1a5f7a; color: #1a5f7a; }
+        .filter-chip.active {
+            background: #1a5f7a;
+            color: #fff;
+            border-color: #1a5f7a;
+        }
+
+        /* 产品表格 */
+        .product-table-wrap {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            border: 1px solid #e8ecf1;
+        }
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+        .product-table thead {
+            background: linear-gradient(135deg, #1a5f7a 0%, #134a5f 100%);
+        }
+        .product-table thead th {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 14px 16px;
+            text-align: left;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+        .product-table tbody tr {
+            transition: background 0.15s;
+        }
+        .product-table tbody tr:nth-child(even) { background: #fafbfd; }
+        .product-table tbody tr:hover { background: #eef5fa; }
+        .product-table tbody td {
+            padding: 13px 16px;
+            font-size: 0.88rem;
+            color: #444;
+            border-bottom: 1px solid #f0f3f6;
+            vertical-align: middle;
+        }
+        .product-table .code-cell {
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-weight: 600;
+            color: #1a5f7a;
+            background: #eef5fa;
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 0.82rem;
+            white-space: nowrap;
+        }
+        .product-table .name-cell {
+            font-weight: 500;
+            color: #2c3e50;
+            min-width: 260px;
+        }
+        .product-table .spec-cell {
+            color: #777;
+            font-size: 0.82rem;
+        }
+        .btn-inquiry {
+            display: inline-block;
+            padding: 5px 16px;
+            background: linear-gradient(135deg, #1a5f7a, #228fb0);
+            color: #fff;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+        .btn-inquiry:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(26,95,122,0.3);
+        }
+
+        /* 统计条 */
+        .stats-bar {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            padding: 18px 24px;
+            background: #f7fafc;
+            border-radius: 10px;
+            align-items: center;
+        }
+        .stat-item { display: flex; align-items: center; gap: 8px; }
+        .stat-item .num { font-size: 1.4rem; font-weight: 900; color: #1a5f7a; }
+        .stat-item .label { font-size: 0.82rem; color: #888; }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .consumables-hero h1 { font-size: 1.8rem; }
+            .category-header { flex-direction: column; }
+            .category-header .cat-image { width: 100%; height: 180px; }
+            .cat-nav-inner { overflow-x: auto; }
+            .cat-tab { padding: 12px 18px; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🧬</div>
+                <span>南京新莱博生物技术</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="product-consumables.html" style="color:#ff6b6b;">生物耗材</a></li>
+                    <li><a href="product-pei.html">生物试剂</a></li>
+                    <li><a href="index.html#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="index.html#contact" class="contact-btn">立即咨询</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="consumables-hero">
+        <div class="header-container" style="position:relative;z-index:1;">
+            <div class="breadcrumb"><a href="index.html">首页</a> / <a href="index.html#products">产品中心</a> / 生物耗材</div>
+            <h1>生物耗材</h1>
+            <p class="subtitle">高品质实验室耗材，涵盖移液吸头、细胞培养板、培养瓶、离心管等全系列产品，满足科研与生产的多样化需求。</p>
+        </div>
+    </section>
+
+    <!-- 分类导航 -->
+    <div class="cat-nav">
+        <div class="cat-nav-inner">
+            <div class="cat-tab active" data-cat="tips">🔬 吸头 <span class="count">12</span></div>
+            <div class="cat-tab" data-cat="plate">🧫 培养板 <span class="count">12</span></div>
+            <div class="cat-tab" data-cat="flask">🧪 培养瓶 <span class="count">17</span></div>
+            <div class="cat-tab" data-cat="tube">🧪 离心管 <span class="count">12</span></div>
+        </div>
+    </div>
+
+    <!-- ===== 吸头分类 ===== -->
+    <section id="cat-tips" class="category-section active">
+        <div class="category-header">
+            <img src="images/tips_p8_img0.png" alt="ITG自动吸头" class="cat-image">
+            <div class="cat-info">
+                <h2>ITG 自动移液吸头</h2>
+                <p>高品质透明聚丙烯（PP）材质，适配主流品牌移液器。提供袋装、盒装、已灭菌等多种规格，覆盖 12.5μL / 125μL / 300μL / 1250μL 全量程范围。精密模具注塑成型，确保每一支吸头的尖端一致性和密封性，为实验提供精准可靠的移液体验。</p>
+            </div>
+        </div>
+        <div class="filter-bar">
+            <span class="filter-label">规格：</span>
+            <span class="filter-chip active" data-filter="all">全部</span>
+            <span class="filter-chip" data-filter="12.5">12.5μL</span>
+            <span class="filter-chip" data-filter="125">125μL</span>
+            <span class="filter-chip" data-filter="300">300μL</span>
+            <span class="filter-chip" data-filter="1250">1250μL</span>
+        </div>
+        <div class="product-table-wrap">
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th>货号</th>
+                        <th>产品名称</th>
+                        <th>包装规格</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-spec="12.5"><td><span class="code-cell">XLBHC00110</span></td><td class="name-cell">ITG自动吸头-12.5μL透明袋装</td><td class="spec-cell">1000支/包，20包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="12.5"><td><span class="code-cell">XLBHC00100</span></td><td class="name-cell">ITG自动吸头-12.5μL透明盒装</td><td class="spec-cell">384支/盒；50盒/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="12.5"><td><span class="code-cell">XLBHC00101</span></td><td class="name-cell">ITG自动吸头-12.5μL透明盒装已灭菌</td><td class="spec-cell">384支/盒；50盒/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="125"><td><span class="code-cell">XLBHC00210</span></td><td class="name-cell">ITG自动吸头-125μL透明袋装</td><td class="spec-cell">1000支/包，20包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="125"><td><span class="code-cell">XLBHC00200</span></td><td class="name-cell">ITG自动吸头-125μL透明盒装</td><td class="spec-cell">384支/盒；50盒/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="125"><td><span class="code-cell">XLBHC00201</span></td><td class="name-cell">ITG自动吸头-125μL透明盒装已灭菌</td><td class="spec-cell">384支/盒；50盒/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="300"><td><span class="code-cell">XLBHC00310</span></td><td class="name-cell">ITG自动吸头-300μL透明袋装</td><td class="spec-cell">1000支/包，20包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="300"><td><span class="code-cell">XLBHC00300</span></td><td class="name-cell">ITG自动吸头-300μL透明盒装</td><td class="spec-cell">96支/盒；50盒/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="300"><td><span class="code-cell">XLBHC00301</span></td><td class="name-cell">ITG自动吸头-300μL透明盒装已灭菌</td><td class="spec-cell">96支/盒；50盒/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="1250"><td><span class="code-cell">XLBHC00410</span></td><td class="name-cell">ITG自动吸头-1250μL透明袋装</td><td class="spec-cell">1000支/包，5包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="1250"><td><span class="code-cell">XLBHC00400</span></td><td class="name-cell">ITG自动吸头-1250μL透明盒装</td><td class="spec-cell">96支/盒；50盒/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="1250"><td><span class="code-cell">XLBHC00401</span></td><td class="name-cell">ITG自动吸头-1250μL透明盒装已灭菌</td><td class="spec-cell">96支/盒；50盒/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="stats-bar">
+            <div class="stat-item"><span class="num">12</span><span class="label">款吸头产品</span></div>
+            <div class="stat-item"><span class="num">4</span><span class="label">种规格 (12.5~1250μL)</span></div>
+            <div class="stat-item"><span class="num">3</span><span class="label">种包装 (袋装/盒装/灭菌)</span></div>
+        </div>
+    </section>
+
+    <!-- ===== 培养板分类 ===== -->
+    <section id="cat-plate" class="category-section">
+        <div class="category-header">
+            <img src="images/plate_p45_img0.png" alt="细胞培养板" class="cat-image">
+            <div class="cat-info">
+                <h2>细胞培养板</h2>
+                <p>高透明聚苯乙烯（PS）材质，符合 USP CLASS VI 标准。提供 6孔 / 12孔 / 24孔 / 48孔 / 96孔（U底/平底）全系列规格，支持 TC 处理与非处理两种表面工艺。独立凹槽设计便于多孔板操作，纸塑包装确保无菌环境。</p>
+            </div>
+        </div>
+        <div class="filter-bar">
+            <span class="filter-label">规格：</span>
+            <span class="filter-chip active" data-filter="all">全部</span>
+            <span class="filter-chip" data-filter="6">6孔</span>
+            <span class="filter-chip" data-filter="12">12孔</span>
+            <span class="filter-chip" data-filter="24">24孔</span>
+            <span class="filter-chip" data-filter="48">48孔</span>
+            <span class="filter-chip" data-filter="96">96孔</span>
+        </div>
+        <div class="product-table-wrap">
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th>货号</th>
+                        <th>产品名称</th>
+                        <th>包装规格</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-spec="6"><td><span class="code-cell">XLB-PB-001</span></td><td class="name-cell">6孔细胞培养板-纸塑装-TC处理（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="12"><td><span class="code-cell">XLB-PB-002</span></td><td class="name-cell">12孔细胞培养板-纸塑装-TC处理（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="24"><td><span class="code-cell">XLB-PB-003</span></td><td class="name-cell">24孔细胞培养板-纸塑装-TC处理（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="48"><td><span class="code-cell">XLB-PB-004</span></td><td class="name-cell">48孔细胞培养板-纸塑装-TC处理（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="96"><td><span class="code-cell">XLB-PB-005</span></td><td class="name-cell">96孔细胞培养板（U底）-纸塑装-TC处理（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="96"><td><span class="code-cell">XLB-PB-006</span></td><td class="name-cell">96孔细胞培养板（平底）-纸塑装-TC处理（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="6"><td><span class="code-cell">XLB-PB-007</span></td><td class="name-cell">6孔细胞培养板-纸塑装（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="12"><td><span class="code-cell">XLB-PB-008</span></td><td class="name-cell">12孔细胞培养板-纸塑装（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="24"><td><span class="code-cell">XLB-PB-009</span></td><td class="name-cell">24孔细胞培养板-纸塑装（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="48"><td><span class="code-cell">XLB-PB-010</span></td><td class="name-cell">48孔细胞培养板-纸塑装（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="96"><td><span class="code-cell">XLB-PB-011</span></td><td class="name-cell">96孔细胞培养板（U底）-纸塑装（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="96"><td><span class="code-cell">XLB-PB-012</span></td><td class="name-cell">96孔细胞培养板（平底）-纸塑装（灭菌）</td><td class="spec-cell">1pcs/盒，100PCS/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="stats-bar">
+            <div class="stat-item"><span class="num">12</span><span class="label">款培养板</span></div>
+            <div class="stat-item"><span class="num">5</span><span class="label">种孔型规格</span></div>
+            <div class="stat-item"><span class="num">2</span><span class="label">种表面处理 (TC/非TC)</span></div>
+        </div>
+    </section>
+
+    <!-- ===== 培养瓶分类 ===== -->
+    <section id="cat-flask" class="category-section">
+        <div class="category-header">
+            <img src="images/flask_p40_img0.png" alt="细胞培养瓶" class="cat-image">
+            <div class="cat-info">
+                <h2>细胞培养瓶</h2>
+                <p>高透明聚苯乙烯（PS）材质，提供 T25 / T75 / T175 / T225 四种标准规格。支持密封盖、滤膜盖、子母盖三种盖型选择，部分型号支持 TC 表面处理。电子束灭菌，SAL=10⁻⁶，无热原无内毒素，确保细胞培养的安全性与可靠性。</p>
+            </div>
+        </div>
+        <div class="filter-bar">
+            <span class="filter-label">规格：</span>
+            <span class="filter-chip active" data-filter="all">全部</span>
+            <span class="filter-chip" data-filter="T25">T25</span>
+            <span class="filter-chip" data-filter="T75">T75</span>
+            <span class="filter-chip" data-filter="T175">T175</span>
+            <span class="filter-chip" data-filter="T225">T225</span>
+        </div>
+        <div class="product-table-wrap">
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th>货号</th>
+                        <th>产品名称</th>
+                        <th>包装规格</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-spec="T25"><td><span class="code-cell">XLB-PY-001</span></td><td class="name-cell">T25细胞培养瓶-密封盖（紫色）-TC处理（灭菌）</td><td class="spec-cell">10pcs/袋，20袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T25"><td><span class="code-cell">XLB-PY-002</span></td><td class="name-cell">T25细胞培养瓶-滤膜盖（紫色）-TC处理（灭菌）</td><td class="spec-cell">10pcs/袋，20袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T75"><td><span class="code-cell">XLB-PY-003</span></td><td class="name-cell">T75细胞培养瓶-密封盖（紫色）-TC处理（灭菌）</td><td class="spec-cell">5PCS/袋，20袋/大箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T75"><td><span class="code-cell">XLB-PY-004</span></td><td class="name-cell">T75细胞培养瓶-滤膜盖（紫色）-TC处理（灭菌）</td><td class="spec-cell">5PCS/袋，20袋/大箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T175"><td><span class="code-cell">XLB-PY-005</span></td><td class="name-cell">T175细胞培养瓶-密封盖（紫色）-TC处理（灭菌）</td><td class="spec-cell">5PCS/袋，8袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T175"><td><span class="code-cell">XLB-PY-006</span></td><td class="name-cell">T175细胞培养瓶-滤膜盖（紫色）-TC处理（灭菌）</td><td class="spec-cell">5PCS/袋，8袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T225"><td><span class="code-cell">XLB-PY-007</span></td><td class="name-cell">T225细胞培养瓶-密封盖（紫色）-TC处理（灭菌）</td><td class="spec-cell">5PCS/袋，5袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T225"><td><span class="code-cell">XLB-PY-008</span></td><td class="name-cell">T225细胞培养瓶-滤膜盖（紫色）-TC处理（灭菌）</td><td class="spec-cell">5PCS/袋，5袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T25"><td><span class="code-cell">XLB-PY-009</span></td><td class="name-cell">T25细胞培养瓶-密封盖（紫色）（灭菌）</td><td class="spec-cell">10pcs/袋，20袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T25"><td><span class="code-cell">XLB-PY-010</span></td><td class="name-cell">T25细胞培养瓶-滤膜盖（紫色）（灭菌）</td><td class="spec-cell">10pcs/袋，20袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T75"><td><span class="code-cell">XLB-PY-011</span></td><td class="name-cell">T75细胞培养瓶-密封盖（紫色）（灭菌）</td><td class="spec-cell">5PCS/袋，20袋/大箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T75"><td><span class="code-cell">XLB-PY-012</span></td><td class="name-cell">T75细胞培养瓶-滤膜盖（紫色）（灭菌）</td><td class="spec-cell">5PCS/袋，20袋/大箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T175"><td><span class="code-cell">XLB-PY-013</span></td><td class="name-cell">T175细胞培养瓶-密封盖（紫色）（灭菌）</td><td class="spec-cell">5PCS/袋，8袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T175"><td><span class="code-cell">XLB-PY-014</span></td><td class="name-cell">T175细胞培养瓶-滤膜盖（紫色）（灭菌）</td><td class="spec-cell">5PCS/袋，8袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T225"><td><span class="code-cell">XLB-PY-015</span></td><td class="name-cell">T225细胞培养瓶-密封盖（紫色）（灭菌）</td><td class="spec-cell">5PCS/袋，5袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T225"><td><span class="code-cell">XLB-PY-016</span></td><td class="name-cell">T225细胞培养瓶-滤膜盖（紫色）（灭菌）</td><td class="spec-cell">5PCS/袋，5袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="T75"><td><span class="code-cell">XLB-PY-017</span></td><td class="name-cell">T75细胞培养瓶-子母盖（紫色）-TC处理（灭菌）</td><td class="spec-cell">5PCS/袋，20袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="stats-bar">
+            <div class="stat-item"><span class="num">17</span><span class="label">款培养瓶</span></div>
+            <div class="stat-item"><span class="num">4</span><span class="label">种规格 (T25~T225)</span></div>
+            <div class="stat-item"><span class="num">3</span><span class="label">种盖型 (密封/滤膜/子母)</span></div>
+        </div>
+    </section>
+
+    <!-- ===== 离心管分类 ===== -->
+    <section id="cat-tube" class="category-section">
+        <div class="category-header">
+            <img src="images/tube_p49_img0.png" alt="离心管" class="cat-image">
+            <div class="cat-info">
+                <h2>离心管</h2>
+                <p>进口聚丙烯（PP）材质，高性能耐离心力设计。涵盖微量离心管（1.5mL/2.0mL）、常规离心管（15mL/50mL）、高速离心管及可立离心管等全系列。提供袋装、架装等多种包装方式，支持灭菌与非灭菌选项，耐受温度 -80°C 至 121°C。</p>
+            </div>
+        </div>
+        <div class="filter-bar">
+            <span class="filter-label">类型：</span>
+            <span class="filter-chip active" data-filter="all">全部</span>
+            <span class="filter-chip" data-filter="micro">微量离心管</span>
+            <span class="filter-chip" data-filter="normal">常规离心管</span>
+            <span class="filter-chip" data-filter="highspeed">高速离心管</span>
+            <span class="filter-chip" data-filter="standup">可立离心管</span>
+        </div>
+        <div class="product-table-wrap">
+            <table class="product-table">
+                <thead>
+                    <tr>
+                        <th>货号</th>
+                        <th>产品名称</th>
+                        <th>包装规格</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-spec="micro"><td><span class="code-cell">XLB-LXG-001</span></td><td class="name-cell">微量离心管-1.5mL，透明，锥底，袋装，灭菌</td><td class="spec-cell">500支/包，10包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="micro"><td><span class="code-cell">XLB-LXG-002</span></td><td class="name-cell">微量离心管-2.0mL，透明，锥底，袋装，灭菌</td><td class="spec-cell">500支/包，10包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="micro"><td><span class="code-cell">XLB-LXG-003</span></td><td class="name-cell">微量离心管-1.5mL，透明，锥底，袋装</td><td class="spec-cell">500支/包，10包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="micro"><td><span class="code-cell">XLB-LXG-004</span></td><td class="name-cell">微量离心管-2.0mL，透明，锥底，袋装</td><td class="spec-cell">500支/包，10包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="normal"><td><span class="code-cell">XLB-LXG-005</span></td><td class="name-cell">5ml锁扣离心管</td><td class="spec-cell">100支/袋，30袋/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="normal"><td><span class="code-cell">XLB-LXG-006</span></td><td class="name-cell">离心管-15mL紫色平盖尖底灭菌袋装</td><td class="spec-cell">50支/包，10包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="normal"><td><span class="code-cell">XLB-LXG-007</span></td><td class="name-cell">离心管-50mL紫色平盖尖底灭菌袋装</td><td class="spec-cell">25支/包，20包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="standup"><td><span class="code-cell">XLB-LXG-008</span></td><td class="name-cell">可立离心管-50mL蓝色平盖可平底灭菌袋装</td><td class="spec-cell">25支/包，20包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="highspeed"><td><span class="code-cell">XLB-LXG-009</span></td><td class="name-cell">50ml高速离心管袋装灭菌</td><td class="spec-cell">25支/包，20包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="highspeed"><td><span class="code-cell">XLB-LXG-010</span></td><td class="name-cell">15ml高速离心管袋装灭菌</td><td class="spec-cell">25支/包，20包/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="normal"><td><span class="code-cell">XLB-LXG-011</span></td><td class="name-cell">离心管-15ml紫色平盖尖底灭菌塑料架装</td><td class="spec-cell">50支/架，10架/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                    <tr data-spec="normal"><td><span class="code-cell">XLB-LXG-012</span></td><td class="name-cell">离心管-50ml紫色平盖尖底塑料架装</td><td class="spec-cell">25支/架，20架/箱</td><td><a href="index.html#contact" class="btn-inquiry">询价</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="stats-bar">
+            <div class="stat-item"><span class="num">12</span><span class="label">款离心管</span></div>
+            <div class="stat-item"><span class="num">4</span><span class="label">种类型</span></div>
+            <div class="stat-item"><span class="num">20000g</span><span class="label">最大耐离心力</span></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>南京新莱博生物技术有限公司</h4>
+                <p>生物试剂与耗材专业供应商</p>
+                <p>统一社会信用代码：91320116MA25KRJ14L</p>
+            </div>
+            <div class="footer-section">
+                <h4>产品分类</h4>
+                <p style="color:#57c5b6;font-weight:600;margin-bottom:4px;">生物试剂</p>
+                <a href="product-pei.html">PEI转染试剂</a>
+                <a href="product-magnetic-beads.html">琼脂糖磁性微球</a>
+                <a href="product-cell-selection.html">细胞分选磁珠</a>
+                <p style="color:#e74c3c;font-weight:600;margin:8px 0 4px;">生物耗材</p>
+                <a href="product-consumables.html">实验室耗材全系列</a>
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <p>联系人：陈经理</p>
+                <p>电话：189-1260-8678</p>
+                <p>地址：南京市六合区龙池街道虎跃东路8号</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 南京新莱博生物技术有限公司 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        // 分类切换
+        document.querySelectorAll('.cat-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const cat = tab.dataset.cat;
+                document.querySelectorAll('.category-section').forEach(sec => sec.classList.remove('active'));
+                document.getElementById('cat-' + cat).classList.add('active');
+                const section = document.getElementById('cat-' + cat);
+                section.querySelectorAll('.filter-chip').forEach(c => {
+                    c.classList.toggle('active', c.dataset.filter === 'all');
+                });
+                section.querySelectorAll('.product-table tbody tr').forEach(r => r.style.display = '');
+            });
+        });
+
+        // 规格筛选
+        document.querySelectorAll('.filter-bar').forEach(bar => {
+            bar.querySelectorAll('.filter-chip').forEach(chip => {
+                chip.addEventListener('click', () => {
+                    const parent = chip.closest('.filter-bar');
+                    parent.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                    chip.classList.add('active');
+                    const filter = chip.dataset.filter;
+                    const table = chip.closest('.category-section').querySelector('.product-table');
+                    table.querySelectorAll('tbody tr').forEach(row => {
+                        row.style.display = (filter === 'all' || row.dataset.spec === filter) ? '' : 'none';
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
