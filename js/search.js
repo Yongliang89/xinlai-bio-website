@@ -1,30 +1,51 @@
 // 产品搜索数据库 - 新莱博货号体系
 const productDatabase = [
+    // PEI转染试剂
     { code: 'XLB-PEI-001', name: 'PEI HEX转染试剂', category: 'PEI转染试剂', page: 'product-pei.html', desc: '40K线性聚乙烯亚胺，盐酸盐形式，可直接水溶' },
+
+    // 琼脂糖磁性微球
     { code: 'XLB-MB-001', name: 'Protein A琼脂糖磁性微球', category: '琼脂糖磁性微球', page: 'product-magnetic-beads.html', desc: '≥70mg人IgG/mL沉降胶，纯度≥90%' },
     { code: 'XLB-MB-002', name: 'Protein G琼脂糖磁性微球', category: '琼脂糖磁性微球', page: 'product-magnetic-beads.html', desc: '≥70mg人IgG/mL沉降胶，回收率85%' },
     { code: 'XLB-MB-003', name: 'Ni-NTA琼脂糖磁性微球', category: '琼脂糖磁性微球', page: 'product-magnetic-beads.html', desc: '≈60mg His标签蛋白/mL沉降胶，纯度≥90%' },
     { code: 'XLB-MB-004', name: 'Ni-TED琼脂糖磁性微球', category: '琼脂糖磁性微球', page: 'product-magnetic-beads.html', desc: '耐受EDTA和DTT，≈30mg His蛋白/mL' },
+
+    // 纯化设备
     { code: 'XLB-EQ-001', name: '50mL磁力架', category: '纯化设备', page: 'product-magnetic-beads.html', desc: '4孔，适用于2-50mL离心管' },
     { code: 'XLB-EQ-002', name: '15mL磁力架', category: '纯化设备', page: 'product-magnetic-beads.html', desc: '12孔，适用于0.1-15mL离心管' },
+    { code: 'XLB-EQ-011', name: '5mL单孔超强磁极', category: '纯化设备', page: 'product-cell-selection.html', desc: '无柱式细胞分选专用磁力架' },
+
+    // 血清产品
     { code: 'XLB-SERUM-001', name: '胎牛血清 (FBS)', category: '血清产品', page: 'product-magnetic-beads.html', desc: '细胞培养专用，南美/澳洲来源' },
     { code: 'XLB-SERUM-002', name: '绵羊血清', category: '血清产品', page: 'product-magnetic-beads.html', desc: '免疫学研究、补体实验' },
     { code: 'XLB-SERUM-003', name: '山羊血清', category: '血清产品', page: 'product-magnetic-beads.html', desc: '免疫学研究、封闭液' },
     { code: 'XLB-SERUM-004', name: '新生牛血清', category: '血清产品', page: 'product-magnetic-beads.html', desc: '细胞培养通用' },
-    { code: 'XLB-CS-001', name: 'CD3分选磁珠（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection-column.html', desc: '50-100nm，纯度≥90%，收率≥85%' },
-    { code: 'XLB-CS-002', name: 'CD4分选磁珠（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection-column.html', desc: '50-100nm，纯度≥90%，收率≥85%' },
-    { code: 'XLB-CS-003', name: 'CD8分选磁珠（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection-column.html', desc: '50-100nm，纯度≥90%，收率≥85%' },
-    { code: 'XLB-CS-004', name: 'CD34分选磁珠（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection-column.html', desc: '造血干细胞分选，纯度≥90%' },
-    { code: 'XLB-CS-005', name: 'CD138分选磁珠（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection-column.html', desc: '浆细胞分选' },
-    { code: 'XLB-CS-006', name: '链霉亲和素分选磁珠（50-100nm）', category: '细胞分选磁珠', page: 'product-cell-selection-columnless.html', desc: '搭配生物素化抗体使用' },
-    { code: 'XLB-CS-007', name: '链霉亲和素分选磁珠（150-200nm）', category: '细胞分选磁珠', page: 'product-cell-selection-columnless.html', desc: '搭配生物素化抗体使用' },
-    { code: 'XLB-CS-008', name: 'NK细胞阴选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection-columnless.html', desc: '阴性分选，高纯度NK细胞' },
-    { code: 'XLB-CS-009', name: 'T细胞阴选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection-columnless.html', desc: '阴性分选，高纯度T细胞' },
-    { code: 'XLB-CS-010', name: '单核细胞阴选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection-columnless.html', desc: '阴性分选，高纯度单核细胞' },
-    { code: 'XLB-CS-011', name: 'CD138分选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection-columnless.html', desc: '含磁珠+抗体Cocktail+去除试剂' },
-    { code: 'XLB-CS-012', name: 'Anti-Biotin分选磁珠', category: '细胞分选磁珠', page: 'product-cell-selection-columnless.html', desc: '搭配生物素化抗体' },
-    { code: 'XLB-CS-013', name: 'CD14分选磁珠（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection-columnless.html', desc: '单核细胞/巨噬细胞分选' },
-    { code: 'XLB-EQ-011', name: '5mL单孔超强磁极', category: '纯化设备', page: 'product-cell-selection-columnless.html', desc: '无柱式分选专用磁力架' },
-    { code: 'XLB-CS-014', name: '人CD3/CD28激活磁珠', category: '细胞激活磁珠', page: 'product-cell-activation.html', desc: '4.5μm，9天150倍扩增' },
-    { code: 'XLB-CS-015', name: '小鼠CD3/CD28激活磁珠', category: '细胞激活磁珠', page: 'product-cell-activation.html', desc: '4.5μm，T细胞激活扩增' },
+
+    // 细胞激活磁珠
+    { code: 'XLB-CS-001-1', name: '人CD3/CD28激活磁珠 (200µL)', category: '细胞激活磁珠', page: 'product-cell-activation.html', desc: '4.5μm，处理8×10⁶ T细胞，9天150倍扩增' },
+    { code: 'XLB-CS-001-2', name: '人CD3/CD28激活磁珠 (2mL)', category: '细胞激活磁珠', page: 'product-cell-activation.html', desc: '4.5μm，处理8×10⁷ T细胞，9天150倍扩增' },
+    { code: 'XLB-CS-002-1', name: '小鼠CD3/CD28激活磁珠 (200µL)', category: '细胞激活磁珠', page: 'product-cell-activation.html', desc: '4.5μm，处理8×10⁶ T细胞' },
+    { code: 'XLB-CS-002-2', name: '小鼠CD3/CD28激活磁珠 (2mL)', category: '细胞激活磁珠', page: 'product-cell-activation.html', desc: '4.5μm，处理8×10⁷ T细胞' },
+
+    // 无柱式细胞分选磁珠 - 阴性分选试剂盒
+    { code: 'XLB-CS-003-1', name: 'VDS中性粒细胞阴选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁸细胞，纯度≥90%' },
+    { code: 'XLB-CS-003-2', name: 'VDS中性粒细胞阴选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁹细胞，纯度≥90%' },
+    { code: 'XLB-CS-004-1', name: 'VDS CD138分选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '骨髓/全血CD138分选' },
+    { code: 'XLB-CS-004-2', name: 'VDS CD138分选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '骨髓/全血CD138分选' },
+    { code: 'XLB-CS-004-3', name: 'VDS CD138分选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '骨髓/全血CD138分选' },
+    { code: 'XLB-CS-005-1', name: 'VDS单核细胞阴选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁸细胞，纯度≥90%' },
+    { code: 'XLB-CS-005-2', name: 'VDS单核细胞阴选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁹细胞，纯度≥90%' },
+    { code: 'XLB-CS-006-1', name: 'VDS T细胞阴选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁸细胞，纯度≥90%' },
+    { code: 'XLB-CS-006-2', name: 'VDS T细胞阴选试剂盒（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁹细胞，纯度≥90%' },
+    { code: 'XLB-CS-007-1', name: 'VDS NK细胞阴选试剂（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁸细胞，纯度≥90%' },
+    { code: 'XLB-CS-007-2', name: 'VDS NK细胞阴选试剂（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁹细胞，纯度≥90%' },
+    { code: 'XLB-CS-008-1', name: 'VDS CD4⁺细胞阴选试剂（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁸细胞，纯度≥90%' },
+    { code: 'XLB-CS-008-2', name: 'VDS CD4⁺细胞阴选试剂（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁹细胞，纯度≥90%' },
+    { code: 'XLB-CS-009-1', name: 'VDS CD8⁺细胞阴选试剂（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁸细胞，纯度≥90%' },
+    { code: 'XLB-CS-009-2', name: 'VDS CD8⁺细胞阴选试剂（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁹细胞，纯度≥90%' },
+
+    // 无柱式细胞分选磁珠 - 阳性分选试剂
+    { code: 'XLB-CS-010-1', name: 'VDS CD14⁺细胞阳选试剂（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁸细胞，纯度≥90%' },
+    { code: 'XLB-CS-010-2', name: 'VDS CD14⁺细胞阳选试剂（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁹细胞，纯度≥90%' },
+    { code: 'XLB-CS-011-1', name: 'VDS CD19⁺细胞阳选试剂（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁸细胞，纯度≥90%' },
+    { code: 'XLB-CS-011-2', name: 'VDS CD19⁺细胞阳选试剂（抗人）', category: '细胞分选磁珠', page: 'product-cell-selection.html', desc: '处理1×10⁹细胞，纯度≥90%' },
 ];
